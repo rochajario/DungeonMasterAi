@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "GPT_API_KEY=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 quasar build"
+    "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

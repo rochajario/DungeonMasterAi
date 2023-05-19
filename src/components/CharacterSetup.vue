@@ -49,11 +49,13 @@
                 <q-card-section horizontal>
                     <q-card-section style="width: 100%;white-space: pre-line;" class="text-normal text-center">
 
-                        <div class="q-pa-md column justify-center q-gutter-sm ">
-                            <q-input dense outlined v-model='name' label="Character Name" />
+                        <div class="q-pa-md column justify-center q-gutter-md ">
+                            <q-input dense outlined v-model='name' label="Character Name" hint="Place your character's name"
+                                lazy-rules :rules="[val => val && val.length > 0 || 'Please type something']" />
                             <q-select dense outlined v-model='race' :options="raceOptions" label="Race" />
                             <q-select dense outlined v-model='gender' :options="genreOptions" label="Genre" />
-                            <q-input type="textarea" v-model='backgroundStory' dense outlined label="Backgound History" />
+                            <q-input type="textarea" v-model='backgroundStory' dense outlined label="Backgound History" hint="Place your character's background story"
+                                lazy-rules :rules="[val => val && val.length > 0 || 'Please type something']" />/>
                         </div>
 
                     </q-card-section>
@@ -100,10 +102,12 @@
     <q-footer>
         <q-toolbar class="bg-grey-3 text-black row q-py-md justify-end">
             <div class="row justify-center q-gutter-md text-bold">
-                <q-btn v-if="step > 1" flat color="primary" @click="previous" label="Previous" icon="mdi-arrow-left-circle"/>
-                <q-btn v-if="step != 3" flat color="primary" @click="next" label="Next" icon-right="mdi-arrow-right-circle"/>
-                <q-btn v-if="step == 3" color="primary" label="Start a new Adventure" class="primary" icon-right="mdi-sword-cross"
-                    @click="startAdventure" />
+                <q-btn v-if="step > 1" flat color="primary" @click="previous" label="Previous"
+                    icon="mdi-arrow-left-circle" />
+                <q-btn v-if="step != 3" flat color="primary" @click="next" label="Next"
+                    icon-right="mdi-arrow-right-circle" />
+                <q-btn v-if="step == 3" color="primary" text-color="accent" label="Start a new Adventure" class="primary"
+                    icon-right="mdi-sword-cross" @click="startAdventure" />
             </div>
         </q-toolbar>
     </q-footer>

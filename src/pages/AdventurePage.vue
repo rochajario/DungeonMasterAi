@@ -1,50 +1,53 @@
 <template>
-  <q-page>
-    <div class="q-pa-md row justify-center">
-      <div style="width: 100%;" class="q-mx-md">
-        <section id="adventure">
-          <article v-for="message in messageHistory" :key="message">
-            <aside v-if="message.author == 'Dungeon Master'">
-              <q-card flat bordered style="background: radial-gradient(circle, #ecd9b2 0%, #d3ba88 100%); width: 100%;"
-                class="text-normal">
-                <q-item>
-                  <q-item-section>
-                    <q-item-label caption class="text-secondary">
-                      Dungeon Master
-                    </q-item-label>
-                  </q-item-section>
-                </q-item>
-                <q-separator />
-                <q-card-section horizontal>
-                  <q-card-section style="width: 100%;white-space: pre-line;" class="text-center text-secondary">
-                    <p v-for="paragraph in message.text" :key="paragraph">{{ paragraph }}</p>
+  <q-form @submit="askGpt">
+    <q-page>
+      <div class="q-pa-md row justify-center">
+        <div style="width: 100%;" class="q-mx-md">
+          <section id="adventure">
+            <article v-for="message in messageHistory" :key="message">
+              <aside v-if="message.author == 'Dungeon Master'">
+                <q-card flat bordered style="background: radial-gradient(circle, #ecd9b2 0%, #d3ba88 100%); width: 100%;"
+                  class="text-normal">
+                  <q-item>
+                    <q-item-section>
+                      <q-item-label caption class="text-secondary">
+                        Dungeon Master
+                      </q-item-label>
+                    </q-item-section>
+                  </q-item>
+                  <q-separator />
+                  <q-card-section horizontal>
+                    <q-card-section style="width: 100%;white-space: pre-line;" class="text-center text-secondary">
+                      <p v-for="paragraph in message.text" :key="paragraph">{{ paragraph }}</p>
+                    </q-card-section>
                   </q-card-section>
-                </q-card-section>
-              </q-card>
-            </aside>
-            <aside v-else>
-              <q-chat-message class="text-history q-mt-sm" bg-color="primary" text-color="accent"
-                :text="message.text" :sent="message.sent">
-              </q-chat-message>
-            </aside>
-          </article>
-        </section>
+                </q-card>
+              </aside>
+              <aside v-else>
+                <q-chat-message class="text-history q-mt-sm" bg-color="primary" text-color="accent" :text="message.text"
+                  :sent="message.sent">
+                </q-chat-message>
+              </aside>
+            </article>
+          </section>
+        </div>
       </div>
-    </div>
-    <q-footer>
-      <q-toolbar class="bg-grey-3 text-black row q-py-md">
-        <q-btn round flat icon="mdi-shield-account" class="text-primary" @click="open" />
-        <q-btn round flat icon="mdi-sword-cross" class="text-primary" @click="seeItem" />
-        <q-btn round flat icon="mdi-dice-multiple" class="text-primary" @click="rollDice" />
-        <q-input v-model="message" rounded outlined dense class="WAL__field q-mx-md col-grow text-history text-secondary"
-          bg-color="white" placeholder="What do you want to do?" />
-        <q-btn round flat icon="mdi-comment-arrow-right-outline" class="text-primary" @click="askGpt" />
-      </q-toolbar>
-    </q-footer>
-    <q-dialog v-model="dialog" position="top" full-width>
+      <q-footer>
+        <q-toolbar class="bg-grey-3 text-black row q-py-md">
+          <q-btn round flat dense icon="mdi-shield-account" color="primary" @click="open" />
+          <q-btn round flat dense icon="mdi-sword-cross" color="primary" @click="seeItem" />
+          <q-btn round flat dense icon="mdi-dice-multiple" color="primary" @click="rollDice" />
+          <q-input v-model="message" rounded outlined dense
+            class="WAL__field q-mx-md col-grow text-history text-secondary" bg-color="white"
+            placeholder="What do you want to do?" />
+          <q-btn round  color="primary" text-color="accent" icon="mdi-comment-arrow-right-outline" class="text-primary" type="submit" />
+        </q-toolbar>
+      </q-footer>
+      <q-dialog v-model="dialog" position="top" full-width>
         <character-info />
-    </q-dialog>
-  </q-page>
+      </q-dialog>
+    </q-page>
+  </q-form>
 </template>
 
 <script>
@@ -79,24 +82,10 @@ export default defineComponent({
       this.dialog = true
     },
     async seeItem() {
-      this.messageHistory.push(
-        {
-          author: this.character.name,
-          text: ['/see-items'],
-          sent: true,
-        }
-      );
-      await this.askGpt();
+      this.message = '/see-items';
     },
     async rollDice() {
-      this.messageHistory.push(
-        {
-          author: this.character.name,
-          text: ['/roll'],
-          sent: true,
-        }
-      );
-      await this.askGpt();
+      this.message = '/roll '
     },
     async startAdventure() {
       Loading.show({
@@ -111,9 +100,9 @@ export default defineComponent({
           sent: false,
         })
       })
-      .finally(()=>{
-        Loading.hide()
-      });
+        .finally(() => {
+          Loading.hide()
+        });
     },
     answerDungeonMaster() {
       if (this.message) {
@@ -142,9 +131,9 @@ export default defineComponent({
           sent: false,
         })
       })
-      .finally(()=>{
-        Loading.hide()
-      });;
+        .finally(() => {
+          Loading.hide()
+        });;
     }
   }
 })

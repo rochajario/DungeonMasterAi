@@ -1,8 +1,8 @@
 # Dungeon Master
 
-RPG Game Powered by AI
+## RPG Game Powered by AI
 
-## Set your OpenAI Api Key
+### Set your OpenAI Api Key
 
 ```bash
 cp .env.example .env
@@ -10,7 +10,7 @@ cp .env.example .env
 echo GPT_API_KEY=sk-YourApiKey >> .env
 ```
 
-## Install the dependencies
+### Install the dependencies
 
 ```bash
 yarn
@@ -18,13 +18,13 @@ yarn
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+#### Start the app in development mode (hot-code reloading, error reporting, etc.)
 
 ```bash
 quasar dev
 ```
 
-### Lint the files
+#### Lint the files
 
 ```bash
 yarn lint
@@ -32,7 +32,7 @@ yarn lint
 npm run lint
 ```
 
-### Format the files
+#### Format the files
 
 ```bash
 yarn format
@@ -40,12 +40,12 @@ yarn format
 npm run format
 ```
 
-### Build the app for production
+#### Build the app for production
 
 ```bash
 quasar build
 ```
 
-### Customize the configuration
+#### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).

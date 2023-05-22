@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dungeon Master - The Ultimate AI RPG Online Game</title>
+    <link rel="canonical" href="https://www.example.com">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Immerse yourself in an epic RPG adventure with DungeonMaster. Join a vibrant online gaming community, customize your character, and embark on thrilling quests. Play now and experience the excitement of a truly immersive RPG world.">
+    <meta name="keywords" content="RPG online game, multiplayer RPG, role-playing game, fantasy adventure, online gaming community">
+    <meta name="author" content="Dungeon Master/@rochajario">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Play Dungeon Master - The Ultimate AI RPG Online Game">
+    <meta property="og:description" content="Immerse yourself in an epic RPG adventure with DungeonMaster. Join a vibrant online gaming community, customize your character, and embark on thrilling quests.">
+    <meta name="twitter:card" content="./images/hero-bg.avif">
+    <meta name="twitter:title" content="Play Dungeon Master - The Ultimate AI RPG Online Game">
+    <meta name="twitter:description" content="Immerse yourself in an epic RPG adventure with Dungeon Master. Join a vibrant online gaming community, customize your character, and embark on thrilling quests.">
+    <meta name="twitter:image" content="./images/hero-bg.avif">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        html{
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  body {
+    width: 100%;
+    font-family: "Cinzel", serif;
+    background-attachment: fixed;
+    background-image: url("./public/images/hero-bg.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter:opacity(0.8);
+  }
+  .opaque-section {
+    background-image: radial-gradient(circle, #ecd9b2 0%, #d3ba88 75%, #80543e 100%) !important;
+    filter:opacity(0.8);
+  }
+
+  .game {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .nav-style {
+    color: #550C18 !important;
+    font-weight: 600;
+
+  }
+  .hero {
+    background-image: radial-gradient(circle, #80543e 15%, #550C18 75%, #280309 100%), url("images/hero-bg.avif");
+    background-size: cover;
+  }
+  .hero-txt{
+    color: rgb(240, 232, 217);
+    text-shadow: 1px 1px #2e060d;
+  }
+  .btn-hero {
+    font-weight: 600;
+    background-color: #550C18;
+    color: #dac9a5;
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="opaque-section navbar navbar-expand-lg navbar-light bg-light px-5 d-flex justify-content-between">
+        <span class="navbar-brand nav-style">Dungeon Master</span>
+          <div class="d-flex flex-column text-center justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#game">Game</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+      <section
+        id="home"
+        class="py-5 text-center d-flex flex-column justify-content-center hero"
+        style="height: 100vh; top: 0"
+      >
+        <div class="row py-lg-5 hero-txt">
+          <div class="col-lg-5 col-md-8 mx-auto">
+            <h1 class="fw-dark">Artificial Intelligence RPG</h1>
+            <p class="lead">
+              Embark on a solo RPG adventure in a fantasy world! Join me as the Dungeon Master for epic quests, mystical creatures, and endless possibilities. Let's create an unforgettable adventure together! Are you ready?
+            </p>
+            <p>
+              <a href="#game" class="btn my-2 btn-hero" role="button">Play Now</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="game" class="bg-body-secondary">
+        <iframe
+          title="Dungeon Master - Artificial Intelligence"
+          src="https://dungeon-master-ai.vercel.app/"
+          style="width: 100%; height: 100vh"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer id="contact" class="opaque-section py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#" class="btn my-2 btn-hero" role="button">Back to top</a>
+        </p>
+        <span class="d-flex flex-column mb-1">
+          <p>Dungeon Master &copy;</p>
+          <small><strong>Made by Jario Rocha - Software Engineer - Fullstack Developer</strong></small>
+          <small>
+            <a href="mailto:rochajario@gmail.com" target="_blank" class="nav-link">E-mail</a>
+            <a href="https://www.linkedin.com/in/rochajario/" target="_blank" class="nav-link">Linkedin</a>
+            <a href="https://github.com/rochajario" target="_blank" class="nav-link">Github</a>
+          </small>
+        </span>
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

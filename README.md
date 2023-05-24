@@ -1,5 +1,5 @@
+<h1 align=center>Dungeon Master</h1>
 <div align="center">
-  <h1>Dungeon Master<h1>
   <h2>Open Source AI Powered RPG Master</h2>
   <h3>Play <strong>Online and Free</strong> RPG games controlled by Artificial Intelligence.</h3>
   <image src="./public/images/system-preview.png" width="600px" alt="System Preview"></image>
